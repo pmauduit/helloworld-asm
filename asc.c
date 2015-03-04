@@ -5,7 +5,7 @@ void f(unsigned long long d) {
   printf("Loop: %d\n", loop);
   unsigned long long temp = d;
   while (loop > 0) {
-    printf("%llu\n", temp);
+    printf("%016llx\n", temp);
     temp = (temp << 1) + 0b1;
     loop--;
   }
@@ -17,4 +17,10 @@ int main(void) {
   // max unsigned long long : 18 446 744 073 709 551 615
   printf("0xff ff ff ff ff ff ff ff = %llu\n",  (unsigned long long) 0xffffffffffffffff);
   return 0;
+  // 64 bits = 8 bytes
+  // 0 < 1 byte < 0xff
+  // 2 chars (0-f) needed for each byte representation in hex
+  // 8 chars (0-1) needed for each byte representation in bin
+  // ...
+  // What do we use base-10 for ???
 }

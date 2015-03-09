@@ -1,4 +1,4 @@
-.PHONY: clean compile
+#!/usr/bin/make -f
 
 NASM=$(shell which nasm 2>/dev/null || echo "echo 'Cannot find nasm on your system' && exit 1;)
 NASM_FLAGS= -f elf64
